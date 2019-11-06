@@ -31,6 +31,8 @@ def OpenFile():
     except:
         print("No file exists")
 
+def clear_search(event):
+    intEntry.delete(0,END)
 
 #GUI
 win = tk.Tk()
@@ -46,9 +48,13 @@ browseBtn.pack(pady=10)
 tk.Label(win, text="or", font="bold").pack(pady=5)
 
 intLabel = tk.Label(win, text="Enter list of positive integers")
+formatLabel = tk.Label(win, text="Ex. 1,2,3,4,5")
 intLabel.pack(pady=10)
+formatLabel.pack()
 intEntry = tk.Entry(win) #List of integers
-intEntry.pack()
+intEntry.insert(0,'1,2,3,4,5') #placeholder
+intEntry.bind("<FocusIn>", lambda args: intEntry.delete(0, 'end'))
+intEntry.pack(pady=10)
 
 sumLabel = tk.Label(win, text="Enter sum")
 sumLabel.pack(pady=10)
