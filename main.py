@@ -11,7 +11,7 @@ def Solve():
 
 def OpenFile():
     #Open File and read contents
-    name = askopenfilename(initialdir="~/",
+    name = askopenfilename(initialdir="~/Desktop/cmsc142project/",
                            filetypes=(("Text File", "*.txt"), ("All Files", "*.*")),
                            title="Choose Text file."
                            )
@@ -20,13 +20,24 @@ def OpenFile():
         # reading text file
         with open(name,'r') as file:
             noOfSets = file.readline().strip()
-            print(noOfSets)
+            noOfSets = int(noOfSets)
+            print("No of sets: " + str(noOfSets))
 
-            #for every set:
-                #get the list of integers
-                #get the sum
-                #solve
-                #display in the results box
+            for line in range(noOfSets):
+
+                sum = file.readline().strip()
+                sum = int(sum)
+                integers = file.readline().strip()
+                integers = integers.split() #split the integers line and put it in array
+
+
+                #algorithm
+                #put it in display box
+
+                print("Set: " + str(line+1))
+                print("Sum: " + str(sum))
+                print("Integers: " + str(integers))
+
 
     except:
         print("No file exists")
@@ -51,12 +62,12 @@ intLabel = tk.Label(win, text="Enter list of positive integers")
 formatLabel = tk.Label(win, text="Ex. 1,2,3,4,5")
 intLabel.pack(pady=10)
 formatLabel.pack()
-intEntry = tk.Entry(win) #List of integers
+intEntry = tk.Entry(win, width="50", justify="center") #List of integers
 intEntry.insert(0,'1,2,3,4,5') #placeholder
 intEntry.bind("<FocusIn>", lambda args: intEntry.delete(0, 'end'))
 intEntry.pack(pady=10)
 
-sumLabel = tk.Label(win, text="Enter sum")
+sumLabel = tk.Label(win, text="Enter sum", width="200")
 sumLabel.pack(pady=10)
 sumEntry = tk.Entry(win) #Sum
 sumEntry.pack()
