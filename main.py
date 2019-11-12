@@ -3,9 +3,19 @@ from tkinter.filedialog import askopenfilename
 
 def Solve():
     #get the list of integers from the entry
+    integers = intEntry.get()
+    integers = integers.split(',')
+    print("Integers: " + str(integers))
+
     #get the sum from the entry
+    sum = sumEntry.get()
+    print("Sum: " + str(sum))
+
+
     #solve
     #put it in the results box
+
+
     print("Solve")
 
 
