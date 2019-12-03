@@ -1,4 +1,4 @@
 Must install first:
 
-tkinter
-ttkthemes
+sudo pip3 install tkinter
+sudo pip3 install ttkthemes
