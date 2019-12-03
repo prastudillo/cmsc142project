@@ -5,6 +5,7 @@ from ttkthemes import ThemedTk
 
 def SubsetSum(integers, sum):
 
+    integers.sort() #sorting
     N = len(integers)
 
     # combination
