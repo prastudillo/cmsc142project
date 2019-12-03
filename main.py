@@ -45,7 +45,7 @@ def SubsetSum(integers, sum):
                     resultStr = str(option[i][nopts[i]]) + " "
                     results.txt.insert("end",resultStr)
                 print("\n")
-               results.txt.insert("end", "}\n")
+                results.txt.insert("end", "}\n")
 
             move = move - 1
             nopts[move] = nopts[move] - 1
